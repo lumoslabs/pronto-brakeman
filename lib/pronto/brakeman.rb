@@ -14,7 +14,7 @@ module Pronto
       if files.any?
         output = ::Brakeman.run(app_path: ruby_patches.first.repo.path,
                                 output_formats: [:to_s],
-                                only_files: files)
+                                rails3: true)
         messages_for(ruby_patches, output).compact
       else
         []
